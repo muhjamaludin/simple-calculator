@@ -39,13 +39,15 @@ function performCalculation() {
 
   let result = 0
   if (calculator.operator === "x") {
-    result = parseInt(calculator.firstNumber) * parseInt(calculator.displayNumber)
+    result = parseFloat(calculator.firstNumber) * parseFloat(calculator.displayNumber)
   } else if (calculator.operator === "-") {
-    result = parseInt(calculator.firstNumber) - parseInt(calculator.displayNumber)
+    result = parseFloat(calculator.firstNumber) - parseFloat(calculator.displayNumber)
   } else if (calculator.operator === "+") {
-    result = parseInt(calculator.firstNumber) + parseInt(calculator.displayNumber)
+    result = parseFloat(calculator.firstNumber) + parseFloat(calculator.displayNumber)
+  } else if (calculator.operator === "^") {
+    result = Math.pow(parseFloat(calculator.firstNumber),parseFloat(calculator.displayNumber))
   } else {
-    result = parseInt(calculator.firstNumber) / parseInt(calculator.displayNumber)
+    result = parseFloat(calculator.firstNumber) / parseFloat(calculator.displayNumber)
   }
 
   //sent argumen putHistory
@@ -79,8 +81,15 @@ function handleOperator(operator) {
     calculator.waitingForSecondNumber = true
     calculator.firstNumber = calculator.displayNumber
   } else {
-    alert('Operator sudah ditetapkan')
+    alert('Kosongkan layar Ya!')
   }
+}
+
+function percentOperator() {
+  if (calculator.displayNumber === '%') {
+    return
+  }
+  calculator.displayNumber = calculator.displayNumber / 100
 }
 
 const buttons = document.querySelectorAll(".button")
@@ -96,6 +105,12 @@ for (let button of buttons) {
 
     if(target.classList.contains('negative')) {
       inverseNumber()
+      updateDisplay()
+      return
+    }
+
+    if(target.classList.contains('percent')) {
+      percentOperator()
       updateDisplay()
       return
     }
