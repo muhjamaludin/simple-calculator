@@ -23,14 +23,11 @@ body {
   text-align: center;
   padding: 40px;
   border: 1px solid #000;
-  background: -webkit-linear-gradient(top, #d2d2d2, #ddd);
+  background: -webkit-linear-gradient(top, #f1f1f1, #ddd);
   cursor: pointer;
 }
 .button:hover {
   font-weight: bold;
-}
-.equals {
-  flex-basis: 50%;
 }
 .display {
   color: white;
@@ -40,8 +37,11 @@ body {
   border: 1px solid black;
   font-size: 2em;
 }
-.operator, .negative, .equals {
+.equals {
   background: orange;
+}
+.operator {
+  background: #b5b5b5;
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
