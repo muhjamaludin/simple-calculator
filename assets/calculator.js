@@ -44,7 +44,17 @@ function performCalculation() {
     result = parseInt(calculator.firstNumber) - parseInt(calculator.displayNumber)
   }
 
+  //sent argumen putHistory
+  const history = {
+    firstNumber: calculator.firstNumber,
+    secondNumber: calculator.displayNumber,
+    operator: calculator.operator,
+    resutl: result
+  }
+
+  putHistory(history)
   calculator.displayNumber = result
+  renderHistory()
 }
 
 function inputDigit(digit) {
