@@ -26,3 +26,26 @@ body {
   background: -webkit-linear-gradient(top, #d2d2d2, #ddd);
   cursor: pointer;
 }
+.button:hover {
+  font-weight: bold;
+}
+.equals {
+  flex-basis: 50%;
+}
+.display {
+  color: white;
+  width: 100%;
+  padding: 5px 20px;
+  background-color: #333;
+  border: 1px solid black;
+  font-size: 2em;
+}
+.operator, .negative, .equals {
+  background: orange;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 30px;
+  margin-top: 20px;
+}
